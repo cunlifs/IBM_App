@@ -1,0 +1,193 @@
+{
+  "input_datatypes": [
+  ],
+  "output_datatype": "content_template_output",
+  "input_groups": [
+    {
+      "name": "virtualmachine",
+      "label": "Virtual Machine Input Variables"
+    }
+  ],
+  "output_groups": [
+    {
+      "name": "content_template_output",
+      "label": "Outputs"
+    }
+  ],
+  "template_input_params": [
+    {
+        "description": "Public SSH key used to connect to the virtual guest",
+        "hidden": true,
+        "immutable": false,
+        "label": "Public SSH Key",
+        "name": "public_ssh_key",
+        "required": true,
+        "secured": false,
+        "type": "string",
+	      "regex": "^ssh-rsa AAAA[0-9A-Za-z+/]+[=]{0,3}( [^@]+@[^@]+| [^@]+){0,1}$",
+        "group": "virtualmachine",
+        "default": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQD2qNUd5CSAozVUrXvoHXZIY/2ckVhN4wXVibXz+E8TqwwxJYXwqRMI61vilf5QGnvmq52H5/08wd7I6kT75n2zieFqjuFUm2N7MelsPsWctn/VOEGLp9bkiRK4xZr4MGj/LIl0BfW5X2PO4teRw0PUj/NcZ+D9HAD0Zw4PvXgx4yDirikxGL3shQyT4frQoEIApmlxmItRIn1YZuoX5ktF3ZQdlGJZL8++5B/kpclzYoBFZezYh256hiytcKTw/I1jagw6oKYUQjCeg0AEoXzgX/BcGj3/0zYh1PKlefUr+qQJnmfkBGwmB8i/Hua6ZotwyY2ETBD1B1581nSnnlcZ Cunlifs@Stus-MBP"
+    },
+    {
+        "description": "SoftLayer datacenter where infrastructure resources will be deployed",
+        "hidden": false,
+        "immutable": false,
+        "label": "SoftLayer Data Center",
+        "name": "datacenter",
+        "required": true,
+        "secured": false,
+        "type": "string",
+        "options": [
+          {
+              "value" : "ams01",
+              "label": "Amsterdam 01, The Netherlands"
+          },
+          {
+              "value" : "ams03",
+              "label": "Amsterdam 03, The Netherlands"
+          },
+          {
+              "value" : "che01",
+              "label": "Chennai, India"
+          },
+          {
+              "value" : "dal01",
+              "label": "Dallas 01, USA"          },
+          {
+              "value" : "dal02",
+              "label": "Dallas 02, USA"
+          },
+          {
+              "value" : "dal05",
+              "label": "Dallas 05, USA"
+          },
+          {
+              "value" : "dal06",
+              "label": "Dallas 06, USA"
+          },
+          {
+              "value" : "dal07",
+              "label": "Dallas 07, USA"
+          },
+          {
+              "value" : "dal09",
+              "label": "Dallas 09, USA",
+              "default" : "true"
+          },
+          {
+              "value" : "dal10",
+              "label": "Dallas 10, USA"
+          },
+          {
+              "value" : "fra02",
+              "label": "Frankfurt, Germany"
+          },
+          {
+              "value" : "hkg02",
+              "label": "Hong Kong, China"
+          },
+          {
+              "value" : "hou02",
+              "label": "Houston, USA"
+          },
+          {
+              "value" : "lon02",
+              "label": "London, England"
+          },
+          {
+              "value" : "mel01",
+              "label": "Melbourne, Australia"
+          },
+          {
+              "value" : "mil01",
+              "label": "Milan, Italy"
+          },
+          {
+              "value" : "mon01",
+              "label": "Montreal, Canada"
+          },
+          {
+              "value" : "osl01",
+              "label": "Oslo, Norway"
+          },
+          {
+              "value" : "par01",
+              "label": "Paris, France"
+          },
+          {
+              "value" : "mex01",
+              "label": "Querétaro, Mexico"
+          },
+          {
+              "value" : "sjc01",
+              "label": "San Jose 01, USA"
+          },
+          {
+              "value" : "sjc03",
+              "label": "San Jose 03, USA"
+          },
+          {
+              "value" : "sao01",
+              "label": "Sao Paulo, Brazil"
+          },
+          {
+              "value" : "sea01",
+              "label": "Seattle, USA"
+          },
+          {
+              "value" : "seo01",
+              "label": "Seoul 01, Korea"
+          },
+          {
+              "value" : "sng01",
+              "label": "Singapore, Singapore"
+          },
+          {
+              "value" : "syd01",
+              "label": "Sydney, Australia"
+          },
+          {
+              "value" : "tok02",
+              "label": "Tokyo, Japan"
+          },
+          {
+              "value" : "tor01",
+              "label": "Toronto, Canada"
+          },
+          {
+              "value" : "wdc01",
+              "label": "Washington, D.C. 01, USA"
+          },
+          {
+              "value" : "wdc04",
+              "label": "Washington, D.C. 04, USA"
+          }
+        ],
+        "group": "virtualmachine"
+    },
+    {
+        "default": "app-vm",
+        "description": "Hostname of the virtual instance (small flavor) to be deployed",
+        "hidden": false,
+        "immutable": false,
+        "label": "Hostname",
+        "name": "hostname",
+        "required": true,
+        "secured": false,
+        "type": "string",
+        "group": "virtualmachine"
+    },
+    {
+        "default": "ibmlabs.com",
+        "description": "Domain of the virtual instance to be deployed",
+        "hidden": true,
+        "immutable": false,
+        "label": "VM Domain",
+        "name": "domain",
+        "required": true,
+        "secured": false,
+        "type": "string",
+        "group": "virtualmachine"
+    }
+  ]
+}
